@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_app_project/home/food_page_body.dart';
 import 'package:food_app_project/src/custom%20_widget/big_Text.dart';
 import 'package:food_app_project/src/custom%20_widget/small_text.dart';
+import 'package:food_app_project/src/utils/dimensions.dart';
 import 'package:food_app_project/src/utils/my_colors.dart';
 
 class MainFoodPage extends StatefulWidget {
@@ -18,9 +19,10 @@ class _MainFoodPageState extends State<MainFoodPage> {
       //appBar: AppBar(),
       body: Column(
         children:[
+          //Showing header
           Container(
-            margin: EdgeInsets.only(top: 45,bottom: 15),
-          padding: EdgeInsets.only(left: 20,right: 20),
+            margin: EdgeInsets.only(top: Dimensions.height45,bottom: Dimensions.height15),
+          padding: EdgeInsets.only(left: Dimensions.height20,right: Dimensions.height20),
           child:Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,23 +33,24 @@ class _MainFoodPageState extends State<MainFoodPage> {
                   Row(
                     children:[
                      SmallText(text: "Ajmer",color: Colors.black54,),
-                     Icon(Icons.arrow_drop_down)
+                     Icon(Icons.arrow_drop_down,size: Dimensions.icon25,)
                     ]
                   )
                 ],
               ),
               Container(
-                width: 45,
-                height: 45,
+                width: Dimensions.height45,
+                height: Dimensions.height45,
                 child: Icon(Icons.search),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(Dimensions.radius15),
                   color: MyColors.mainColor,
                 ),
               )
             ],
           )
         ),
+          //Showing body
           FoodPageBody(),
         ]
       ),
