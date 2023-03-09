@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_project/home/food_page_body.dart';
 import 'package:food_app_project/src/custom%20_widget/big_Text.dart';
 import 'package:food_app_project/src/custom%20_widget/small_text.dart';
 import 'package:food_app_project/src/utils/dimensions.dart';
 import 'package:food_app_project/src/utils/my_colors.dart';
+
+import 'food_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
@@ -33,7 +34,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
                   Row(
                     children:[
                      SmallText(text: "Ajmer",color: Colors.black54,),
-                     Icon(Icons.arrow_drop_down,size: Dimensions.icon25,)
+                     Icon(Icons.arrow_drop_down,size: Dimensions.icon25,
+                     )
                     ]
                   )
                 ],
@@ -41,7 +43,9 @@ class _MainFoodPageState extends State<MainFoodPage> {
               Container(
                 width: Dimensions.height45,
                 height: Dimensions.height45,
-                child: Icon(Icons.search),
+                child: Icon(Icons.search,
+                  color: Colors.white,
+                ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.radius15),
                   color: MyColors.mainColor,
@@ -51,7 +55,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
           )
         ),
           //Showing body
-          FoodPageBody(),
+          Expanded(child: SingleChildScrollView(child: FoodPageBody())),
         ]
       ),
     ); 
