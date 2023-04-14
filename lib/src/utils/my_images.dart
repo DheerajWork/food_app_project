@@ -1,5 +1,5 @@
 class MyImages {
 
-  static String bgLeft = "assets/bg_left.png";
+  //static String bgLeft = "assets/bg_left.png";
 
 }
